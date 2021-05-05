@@ -45,3 +45,22 @@ mysql> DESCRIBE addressbook_system;
 | Email     | varchar(150) | NO   |     | NULL    |       |
 +-----------+--------------+------+-----+---------+-------+
 8 rows in set (0.29 sec)
+
+UC3 INSERT NEW CONTACT
+
+mysql> INSERT INTO addressbook_system (FirstName, LastName, Address, City, State, Zip, PhoneNo, Email) VALUES
+    -> ( 'Amit','Sharma','Street23','Chandigarh','Punjab',400001,946789912,'amit@gmail'),
+    -> ('Shourya','Sharma','Street24','Pune','Maharastra',400002,987654320,'shourya@gmail.com'),
+    -> ('Shashank','Tiwari','Street35','Mumbai','Maharastra',400003,98765432,'shashank@gmail.com');
+Query OK, 3 rows affected (0.57 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM addressbook_system;
++-----------+----------+----------+------------+------------+--------+-----------+--------------------+
+| FirstName | LastName | Address  | City       | State      | Zip    | PhoneNo   | Email              |
++-----------+----------+----------+------------+------------+--------+-----------+--------------------+
+| Amit      | Sharma   | Street23 | Chandigarh | Punjab     | 400001 | 946789912 | amit@gmail         |
+| Shourya   | Sharma   | Street24 | Pune       | Maharastra | 400002 | 987654320 | shourya@gmail.com  |
+| Shashank  | Tiwari   | Street35 | Mumbai     | Maharastra | 400003 | 98765432  | shashank@gmail.com |
++-----------+----------+----------+------------+------------+--------+-----------+--------------------+
+3 rows in set (0.04 sec)
