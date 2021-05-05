@@ -106,3 +106,13 @@ mysql> SELECT FirstName FROM addressbook_system WHERE City='Pune';
 | Shourya   |
 +-----------+
 1 row in set (0.00 sec)
+
+UC7 SIZE OF ADDRESS BOOK BY CITY OR STATE
+
+mysql> SELECT COUNT(*) FROM addressbook_system WHERE City='Mumbai';
++----------+
+| COUNT(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.14 sec)
