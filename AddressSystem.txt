@@ -15,3 +15,33 @@ mysql> show databases;
 | sys                 |
 +---------------------+
 7 rows in set (0.75 sec)
+
+UC2 CREATE ADDRESS BOOK TABLE
+
+mysql> CREATE TABLE addressbook_system
+    -> (
+    -> FirstName        VARCHAR(150) NOT NULL,
+    -> LastName         VARCHAR(150) NOT NULL,
+    -> Address          VARCHAR(150) NOT NULL,
+    -> City             VARCHAR(150) NOT NULL,
+    -> State            VARCHAR(150) NOT NULL,
+    -> Zip              INT NOT NULL,
+    -> PhoneNo          VARCHAR(15) NOT NULL,
+    -> Email            VARCHAR(150) NOT NULL
+    -> );
+Query OK, 0 rows affected (2.80 sec)
+
+mysql> DESCRIBE addressbook_system;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| FirstName | varchar(150) | NO   |     | NULL    |       |
+| LastName  | varchar(150) | NO   |     | NULL    |       |
+| Address   | varchar(150) | NO   |     | NULL    |       |
+| City      | varchar(150) | NO   |     | NULL    |       |
+| State     | varchar(150) | NO   |     | NULL    |       |
+| Zip       | int          | NO   |     | NULL    |       |
+| PhoneNo   | varchar(15)  | NO   |     | NULL    |       |
+| Email     | varchar(150) | NO   |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+8 rows in set (0.29 sec)
