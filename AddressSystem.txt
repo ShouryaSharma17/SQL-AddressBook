@@ -116,3 +116,14 @@ mysql> SELECT COUNT(*) FROM addressbook_system WHERE City='Mumbai';
 |        1 |
 +----------+
 1 row in set (0.14 sec)
+
+UC8 SORT ALPHABETICALLY PERSON'S NAME BY CITY
+
+mysql> SELECT FirstName FROM addressbook_system ORDER BY City ASC;
++-----------+
+| FirstName |
++-----------+
+| Shashank  |
+| Shourya   |
++-----------+
+2 rows in set (0.09 sec)
