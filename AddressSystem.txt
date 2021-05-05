@@ -82,3 +82,17 @@ mysql> SELECT * FROM addressbook_system;
 | Shashank  | Tiwari   | Street35 | Mumbai   | Maharastra | 400003 | 98765432  | shashank@gmail.com |
 +-----------+----------+----------+----------+------------+--------+-----------+--------------------+
 3 rows in set (0.05 sec)
+
+UC5 DELETE CONTACT OF A PERSON
+
+mysql> DELETE FROM addressbook_system WHERE FirstName='Amit';
+Query OK, 1 row affected (0.12 sec)
+
+mysql> SELECT * FROM addressbook_system;
++-----------+----------+----------+--------+------------+--------+-----------+--------------------+
+| FirstName | LastName | Address  | City   | State      | Zip    | PhoneNo   | Email              |
++-----------+----------+----------+--------+------------+--------+-----------+--------------------+
+| Shourya   | Sharma   | Street24 | Pune   | Maharastra | 400002 | 987654320 | shourya@gmail.com  |
+| Shashank  | Tiwari   | Street35 | Mumbai | Maharastra | 400003 | 98765432  | shashank@gmail.com |
++-----------+----------+----------+--------+------------+--------+-----------+--------------------+
+2 rows in set (0.03 sec)
