@@ -1,0 +1,17 @@
+UC1 CREATE ADDRESS BOOK DATABASE
+mysql> CREATE database AddressBook_System;
+Query OK, 1 row affected (0.66 sec)
+
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| addressbook_service |
+| addressbook_system  |
+| information_schema  |
+| mysql               |
+| payroll_service     |
+| performance_schema  |
+| sys                 |
++---------------------+
+7 rows in set (0.75 sec)
