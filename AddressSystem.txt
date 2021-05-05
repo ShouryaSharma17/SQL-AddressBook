@@ -64,3 +64,21 @@ mysql> SELECT * FROM addressbook_system;
 | Shashank  | Tiwari   | Street35 | Mumbai     | Maharastra | 400003 | 98765432  | shashank@gmail.com |
 +-----------+----------+----------+------------+------------+--------+-----------+--------------------+
 3 rows in set (0.04 sec)
+
+UC4 EDIT CONTACTS
+
+mysql> UPDATE addressbook_system
+    -> SET City='Amritsar', Address='Street12'
+    -> WHERE FirstName='Amit';
+Query OK, 1 row affected (0.23 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM addressbook_system;
++-----------+----------+----------+----------+------------+--------+-----------+--------------------+
+| FirstName | LastName | Address  | City     | State      | Zip    | PhoneNo   | Email              |
++-----------+----------+----------+----------+------------+--------+-----------+--------------------+
+| Amit      | Sharma   | Street12 | Amritsar | Punjab     | 400001 | 946789912 | amit@gmail         |
+| Shourya   | Sharma   | Street24 | Pune     | Maharastra | 400002 | 987654320 | shourya@gmail.com  |
+| Shashank  | Tiwari   | Street35 | Mumbai   | Maharastra | 400003 | 98765432  | shashank@gmail.com |
++-----------+----------+----------+----------+------------+--------+-----------+--------------------+
+3 rows in set (0.05 sec)
