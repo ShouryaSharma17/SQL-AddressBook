@@ -96,3 +96,13 @@ mysql> SELECT * FROM addressbook_system;
 | Shashank  | Tiwari   | Street35 | Mumbai | Maharastra | 400003 | 98765432  | shashank@gmail.com |
 +-----------+----------+----------+--------+------------+--------+-----------+--------------------+
 2 rows in set (0.03 sec)
+
+UC6 RETRIEVE PERSON BELONGING TO CITY OR STATE
+
+mysql> SELECT FirstName FROM addressbook_system WHERE City='Pune';
++-----------+
+| FirstName |
++-----------+
+| Shourya   |
++-----------+
+1 row in set (0.00 sec)
