@@ -127,3 +127,17 @@ mysql> SELECT FirstName FROM addressbook_system ORDER BY City ASC;
 | Shourya   |
 +-----------+
 2 rows in set (0.09 sec)
+
+UC9 IDENTIFY WITH NAME OR TYPE
+
+mysql> INSERT INTO addressbook_system
+    -> ( FirstName, LastName, Address, City, State, Zip, PhoneNo, Email, Name, Type) VALUES ('Shashank','Tiwari','Street35','Mumbai','Maharastra',400003, 98765432, 'shashank@gmail.com' , 'Male', 'Family');
+Query OK, 1 row affected (0.24 sec)
+mysql> SELECT * FROM addressbook_system WHERE FirstName='Shashank';
++-----------+----------+----------+--------+------------+--------+----------+--------------------+------+--------+
+| FirstName | LastName | Address  | City   | State      | Zip    | PhoneNo  | Email              | Name | Type   |
++-----------+----------+----------+--------+------------+--------+----------+--------------------+------+--------+
+| Shashank  | Tiwari   | Street35 | Mumbai | Maharastra | 400003 | 98765432 | shashank@gmail.com | NULL | NULL   |
+| Shashank  | Tiwari   | Street35 | Mumbai | Maharastra | 400003 | 98765432 | shashank@gmail.com | Male | Family |
++-----------+----------+----------+--------+------------+--------+----------+--------------------+------+--------+
+2 rows in set (1.55 sec)
