@@ -141,3 +141,17 @@ mysql> SELECT * FROM addressbook_system WHERE FirstName='Shashank';
 | Shashank  | Tiwari   | Street35 | Mumbai | Maharastra | 400003 | 98765432 | shashank@gmail.com | Male | Family |
 +-----------+----------+----------+--------+------------+--------+----------+--------------------+------+--------+
 2 rows in set (1.55 sec)
+
+UC10 GET NUMBER OF CONTACTS I.E. COUNT BY TYPE
+
+
+mysql> SELECT Type, count(*) as 'FirstName'
+    -> from addressbook_system
+    -> group by type;
++--------+-----------+
+| Type   | FirstName |
++--------+-----------+
+| NULL   |         2 |
+| Family |         1 |
++--------+-----------+
+2 rows in set (4.65 sec)
