@@ -155,3 +155,29 @@ mysql> SELECT Type, count(*) as 'FirstName'
 | Family |         1 |
 +--------+-----------+
 2 rows in set (4.65 sec)
+
+UC 11 - ADDING PERSON TO BOTH FRIEND AND FAMILY 
+
+mysql> INSERT INTO addressbook_system VALUES
+    -> ('Shruti','Sharma','Street14','Raipur','Chattisgrah',400008,987654321,'shruti@gmail.com','Female','Friend'),
+    -> ('Soumya','Agrawal','Street21','Panji','Goa',400005,987654321,'soumya@gmail.com','Female','Family'),
+    -> ('Akash','Tripathi','Street78','Lucknow','UP',400003,87654032,'akash@gmail.com','Male','Friend'),
+    -> ('Simran','Kaur','Street98','Puri','Orissa',400001,875687435,'simran@gmail.com','Female','Family'),
+    -> ('Shubhi','Agrawal','Street67','Vellore','Tamilnadu',400006,4567839905,'shubhi@gmail.com','Female','Friend');
+Query OK, 5 rows affected (2.19 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM addressbook_system;
++-----------+----------+----------+---------+-------------+--------+------------+--------------------+--------+--------+
+| FirstName | LastName | Address  | City    | State       | Zip    | PhoneNo    | Email              | Name   | Type   |
++-----------+----------+----------+---------+-------------+--------+------------+--------------------+--------+--------+
+| Shourya   | Sharma   | Street24 | Pune    | Maharastra  | 400002 | 987654320  | shourya@gmail.com  | NULL   | NULL   |
+| Shashank  | Tiwari   | Street35 | Mumbai  | Maharastra  | 400003 | 98765432   | shashank@gmail.com | NULL   | NULL   |
+| Shashank  | Tiwari   | Street35 | Mumbai  | Maharastra  | 400003 | 98765432   | shashank@gmail.com | Male   | Family |
+| Shruti    | Sharma   | Street14 | Raipur  | Chattisgrah | 400008 | 987654321  | shruti@gmail.com   | Female | Friend |
+| Soumya    | Agrawal  | Street21 | Panji   | Goa         | 400005 | 987654321  | soumya@gmail.com   | Female | Family |
+| Akash     | Tripathi | Street78 | Lucknow | UP          | 400003 | 87654032   | akash@gmail.com    | Male   | Friend |
+| Simran    | Kaur     | Street98 | Puri    | Orissa      | 400001 | 875687435  | simran@gmail.com   | Female | Family |
+| Shubhi    | Agrawal  | Street67 | Vellore | Tamilnadu   | 400006 | 4567839905 | shubhi@gmail.com   | Female | Friend |
++-----------+----------+----------+---------+-------------+--------+------------+--------------------+--------+--------+
+8 rows in set (0.08 sec)
