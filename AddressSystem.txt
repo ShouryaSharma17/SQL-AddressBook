@@ -181,3 +181,83 @@ mysql> SELECT * FROM addressbook_system;
 | Shubhi    | Agrawal  | Street67 | Vellore | Tamilnadu   | 400006 | 4567839905 | shubhi@gmail.com   | Female | Friend |
 +-----------+----------+----------+---------+-------------+--------+------------+--------------------+--------+--------+
 8 rows in set (0.08 sec)
+
+UC12 - IMPLEMENTING ER DIAGRAM
+
+ create table addressbook_id_table
+    -> (
+    -> book_id integer primary key NOT NULL,
+    -> book_name varchar(20)
+    -> );
+Query OK, 0 rows affected (4.78 sec)
+
+describe addressbook_id_table;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| book_id   | int         | NO   | PRI | NULL    |       |
+| book_name | varchar(20) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+2 rows in set (0.04 sec)
+
+mysql> insert into addressbook_id_table values (101,'Book1'),(102,'Book2'),(103,'Book3');
+Query OK, 3 rows affected (0.15 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from addressbook_id_table;
++---------+-----------+
+| book_id | book_name |
++---------+-----------+
+|     101 | Book1     |
+|     102 | Book2     |
+|     103 | Book3     |
++---------+-----------+
+3 rows in set (0.00 sec)
+
+mysql>  CREATE TABLE addressbook_system
+    ->     (
+    ->      FirstName        VARCHAR(150) NOT NULL,
+    ->      LastName         VARCHAR(150) NOT NULL,
+    ->      Address          VARCHAR(150) NOT NULL,
+    ->     City             VARCHAR(150) NOT NULL,
+    ->      State            VARCHAR(150) NOT NULL,
+    ->     Zip              INT NOT NULL,
+    ->      PhoneNo          VARCHAR(15) NOT NULL,
+    ->      Email            VARCHAR(150) PRIMARY KEY NOT NULL,
+    ->      Book_id      INT NOT NULL,
+    ->      FOREIGN KEY (Book_id) references addressbook_id_table(book_id)
+    ->     );
+Query OK, 0 rows affected (4.03 sec)
+
+mysql> describe addressbook_system;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| FirstName | varchar(150) | NO   |     | NULL    |       |
+| LastName  | varchar(150) | NO   |     | NULL    |       |
+| Address   | varchar(150) | NO   |     | NULL    |       |
+| City      | varchar(150) | NO   |     | NULL    |       |
+| State     | varchar(150) | NO   |     | NULL    |       |
+| Zip       | int          | NO   |     | NULL    |       |
+| PhoneNo   | varchar(15)  | NO   |     | NULL    |       |
+| Email     | varchar(150) | NO   | PRI | NULL    |       |
+| Book_id   | int          | NO   | MUL | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+9 rows in set (0.13 sec)
+
+mysql> INSERT INTO addressbook_system (FirstName, LastName, Address, City, State, Zip, PhoneNo, Email, Book_id) VALUES
+    ->     ( 'Amit','Sharma','Street23','Chandigarh','Punjab',400001,946789912,'amit@gmail',101),
+    ->     ('Shourya','Sharma','Street24','Pune','Maharastra',400002,987654320,'shourya@gmail.com',101),
+    ->     ('Shashank','Tiwari','Street35','Mumbai','Maharastra',400003,98765432,'shashank@gmail.com',103);
+Query OK, 3 rows affected (0.24 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from addressbook_system;
++-----------+----------+----------+------------+------------+--------+-----------+--------------------+---------+
+| FirstName | LastName | Address  | City       | State      | Zip    | PhoneNo   | Email              | Book_id |
++-----------+----------+----------+------------+------------+--------+-----------+--------------------+---------+
+| Amit      | Sharma   | Street23 | Chandigarh | Punjab     | 400001 | 946789912 | amit@gmail         |     101 |
+| Shashank  | Tiwari   | Street35 | Mumbai     | Maharastra | 400003 | 98765432  | shashank@gmail.com |     103 |
+| Shourya   | Sharma   | Street24 | Pune       | Maharastra | 400002 | 987654320 | shourya@gmail.com  |     101 |
++-----------+----------+----------+------------+------------+--------+-----------+--------------------+---------+
+3 rows in set (0.07 sec)
